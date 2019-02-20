@@ -7,7 +7,7 @@ package rpg;
 public class TestCharacter {
     public static void main(String [] args){
     Character p1 = new Character("Golden State Warriors", 25,55,20,40,45);
-    Wizard p2 = new Wizard("Washington Wizard", 15,50,40,20,25);
+    Wizard p2 = new Wizard("Washington Wizard", 10,50,40,20,25);
 
 
 
@@ -28,6 +28,7 @@ public class TestCharacter {
         p2.heal(d);
         int damage1 = p1.attack(), damage2 = p2.castLightningBolt(), heal = p2.castHeal();
         
+        System.out.println(p2.getCurrentMagic());
         System.out.println(p1.getName() + " attacks " + p2.getName() + " for " + a);
         System.out.println(p2.getName() + " attacks " + p1.getName() + " for " + b);
         System.out.println(p2.getName() + "cast LightningBolt" + " for " + c );
