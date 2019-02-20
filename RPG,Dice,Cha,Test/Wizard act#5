@@ -1,0 +1,51 @@
+package rpg;
+
+
+public class Wizard extends Character{
+  
+    int maxMagic;
+    int currentMagic;
+    int castheal ;
+    
+    
+
+    public Wizard(String n, int s, int d, int i, int c, int m) {
+        super(n, s, d, i, c, m);
+        this.maxMagic = dice.roll() * dice.roll();
+        this.currentMagic = this.maxMagic;
+        
+    
+    }
+    public int castLightningBolt(){
+        if (currentMagic >= 5){
+            currentMagic = maxMagic - 5;
+            return dice.roll() + getIntelligence();
+            
+        }else{
+            return 0;
+        }
+    }
+    
+    public int castHeal(){
+        int h = dice.roll() + getIntelligence();
+    
+        if (currentMagic >= 8){
+            currentMagic = maxMagic -8;
+            super.heal(h);
+            return 0;
+        
+        }else{
+            return h;
+  
+        }
+    }
+    public int getMaxMagic() {
+ 
+        return maxMagic;
+
+     
+    }    
+    public int getCurrentMagic() {
+         return currentMagic;
+ }
+    }
